@@ -3,15 +3,15 @@ import time
 import sys
 #welcoming the user
 name = raw_input("What is your name? ")
+#prints following statement
+print "Hello, " + name + ", Time to play hangman!\n At any time, type quit to exit"
 
-print "Hello, " + name + ", Time to play hangman!"
-
-print ""
 
 #wait for 1 second
 time.sleep(1)
-
+#tells user to start guessing
 print "Start guessing..."
+#waits half a second
 time.sleep(0.5)
 
 #here we set the secret
@@ -63,11 +63,11 @@ while turns > 0:
     guess = raw_input("guess a character:") 
 
     # set the players guess to guesses
-    guesses += guess                    
-
-    # if the guess is not found in the secret word
+    guesses += guess      
+    #if quit or Quit is submitted, the game will exit              
     if guess == "Quit" or guess == "quit":
         sys.exit()
+    # if the guess is not found in the secret word
     if guess not in word:  
  
      # turns counter decreases with 1 (now 9)
@@ -82,5 +82,5 @@ while turns > 0:
 # if the turns are equal to zero
 if turns == 0:           
     
-        # print "You Loose"
-            print "You Loose" 
+        # print "You Lose"
+            print "You Lose" 
